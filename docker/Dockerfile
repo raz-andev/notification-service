@@ -1,9 +1,9 @@
 FROM eclipse-temurin:21-jdk
 
-ARG APP_JAR=*.jar
+COPY docker/app.jar /opt/app.jar
 
-COPY ${APP_JAR} app.jar
+WORKDIR /opt
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
-EXPOSE 8080
+EXPOSE 8181
